@@ -59,3 +59,9 @@ nav {
   list-style: none;
   color: white;
 }
+
+td {
+  border: 2px solid;
+  text-align: center;
+  padding: 10px;
+}
