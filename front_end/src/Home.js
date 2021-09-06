@@ -23,15 +23,23 @@ class JsonForm extends Component {
       PE: 0,
       ZDEN: 0,
       DTC: 0,
-      DTS: 0
+      DTS: 0,
+      SONIC: 0
     };
     this.loadAndPreview = this.loadAndPreview.bind(this);
     this.predictLog = this.predictLog.bind(this);
     this.predictInBacth = this.predictInBacth.bind(this);
   }
   loadAndPreview(event) {
-    console.log(event.target.name + " " + event.target.value);
-    //this.setState();
+    //console.log(event.target.name + " " + event.target.value);
+    event.preventDefault();
+    this.setState({ [this.state.SONIC]: 10 });
+    const url = "http://localhost:3000/data";
+    const reqOpt = {
+      method: "GET",
+      headers: { "Content-type": "application/json" }
+    };
+    fetch(url, reqOpt).then(resp => resp.json());
   }
 
   predictLog(event) {
@@ -126,6 +134,7 @@ class JsonForm extends Component {
           <input type="button" value="Predict"></input>
           <input type="button" value="Predict in a Batch"></input>
         </form>
+        <div>Sonic {this.state.SONIC}</div>
       </div>
     );
   }
