@@ -4,11 +4,20 @@ import React from "react";
 import "./App.css";
 import Home from "./Home";
 import Navigator from "./NavigationBar";
+import About from "./About";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 function App() {
   return (
     <>
       <div className="App">
-        <Navigator />
+        <Router>
+          <Navigator />
+          <Switch>
+            <Route path="/" exact component={Home}></Route>
+            <Route path="/About" component={About}></Route>
+          </Switch>
+        </Router>
       </div>
     </>
   );

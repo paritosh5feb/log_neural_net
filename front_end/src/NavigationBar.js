@@ -7,7 +7,7 @@ function Navigator() {
       <div className="Navigator">
         <nav>
           <h2>ANN for Sonic Log Prediction</h2>
-          <ul>
+          <ul className="nvlink">
             <li>Home</li>
             <li>About</li>
           </ul>
