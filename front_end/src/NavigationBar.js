@@ -12,6 +12,9 @@ function Navigator() {
             <Link to="/">
               <li>Home</li>
             </Link>
+            <Link to="/FileUpload">
+              <li>Upload Test File</li>
+            </Link>
             <Link to="/About">
               <li>About</li>
             </Link>

@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./Home";
 import Navigator from "./NavigationBar";
 import About from "./About";
+import UploadForm from "./FileUpload";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Navigator />
           <Switch>
             <Route path="/" exact component={Home}></Route>
+            <Route path="/FileUpload" component={UploadForm}></Route>
             <Route path="/About" component={About}></Route>
           </Switch>
         </Router>

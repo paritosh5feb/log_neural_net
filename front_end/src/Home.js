@@ -32,19 +32,39 @@ class JsonForm extends Component {
   }
   loadAndPreview(event) {
     //console.log(event.target.name + " " + event.target.value);
-    event.preventDefault();
-    this.setState({ [this.state.SONIC]: 10 });
-    const url = "http://localhost:3000/data";
-    const reqOpt = {
-      method: "GET",
-      headers: { "Content-type": "application/json" }
-    };
-    fetch(url, reqOpt).then(resp => resp.json());
   }
 
   predictLog(event) {
-    console.log(event.target.name + " " + event.target.value);
+    //console.log(event.target.name + " " + event.target.value);
     //this.setState();
+    event.preventDefault();
+    this.setState({ [this.state.SONIC]: 10 });
+    const url = "http://127.0.0.1:8000/model";
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      CAL: 0,
+      CNC: 0,
+      GR: 0,
+      HRD: 0,
+      HRM: 0,
+      PE: 0,
+      ZDEN: 0,
+      DTC: 0,
+      DTS: 0,
+      SONIC: 0
+    });
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
+    };
+    fetch(url, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log("error", error));
   }
 
   predictInBacth(event) {}
