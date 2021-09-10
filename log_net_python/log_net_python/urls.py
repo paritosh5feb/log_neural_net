@@ -18,7 +18,9 @@ from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 from log_net import views
 from django.views.decorators.csrf import csrf_exempt
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('model/', csrf_exempt(views.call_model.as_view()))
+    #path('model/', csrf_exempt(views.call_model.as_view())),
+    path('model/', csrf_exempt(views.getResults), name="Get Results")
 ]
