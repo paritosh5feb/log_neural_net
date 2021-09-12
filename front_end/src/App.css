@@ -65,3 +65,11 @@ td {
   text-align: center;
   padding: 10px;
 }
+
+plot {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: Black;
+  color: white;
+}

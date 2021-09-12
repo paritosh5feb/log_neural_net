@@ -86,5 +86,12 @@ def getResults(request):
     '''
     well2_predict = LogNetConfig.predictor.predict(x_trainwell2)
     d_df = pd.DataFrame(well2_predict, columns=['DTC', 'DTS'])
-    d_json = d_df.to_json()
-    return JsonResponse({"result":d_json})
+    d={}
+    d["result"] = list(d_df.T.to_dict().values())
+    #djson = json.loads(json.dumps(d))
+    #djson2 = d_df.to_json()
+    #return JsonResponse({'result':djson['result']})
+    #d = {}
+    #d['DTC'] = d_df['DTC'].to_list()
+    #d['DTS'] = d_df['DTS'].to_list()
+    return JsonResponse({"result":d})
