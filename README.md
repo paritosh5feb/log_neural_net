@@ -4,3 +4,8 @@
 
 ## ReactJS Based Front-end
 ![Imgur](https://i.imgur.com/xHobxDj.png)
+
+## Working Components
+This whole set-up has 2 main components:
+1. **Front-End**: ReactJS based - providing user interface for interacting with the Neural Network.
+2. **Back-end**: Django Server hosting the Neural Network.
