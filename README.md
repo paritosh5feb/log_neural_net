@@ -3,4 +3,4 @@
 2. For interacting with this Neural Network, a web-based **Front-end**, implemented in **ReactJS** has been provided.  
 
 ## ReactJS Based Front-end
-[Imgur](https://i.imgur.com/xHobxDj.png)
+![Imgur](https://i.imgur.com/xHobxDj.png)
