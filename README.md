@@ -9,3 +9,5 @@
 This whole set-up has 2 main components:
 1. **Front-End**: ReactJS based - providing user interface for interacting with the Neural Network.
 2. **Back-end**: Django Server hosting the Neural Network.
+The user selects the test file from from the UI in POST request and sends it to the back-end (django) for prediction. The django application running in the back-end loads the pre-trained ANN, receives the file from the POST request, cleans the data and feeds it to the loaded model. The prediction results are then returned in form of JSON.
+![Imgur](https://i.imgur.com/qkxCtlm.png)
